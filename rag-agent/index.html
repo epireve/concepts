@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG & AI Agent Design Patterns Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>RAG & AI Agent Design Patterns Explorer</h1>
+            <p>Explore and compare different design patterns for RAG systems and AI agents</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="view-toggle">
+                <button id="technicalBtn" class="btn btn--primary btn--sm">Technical View</button>
+                <button id="generalBtn" class="btn btn--outline btn--sm">General View</button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search patterns...">
+            </div>
+            
+            <div class="filter-container">
+                <select id="complexityFilter" class="form-control">
+                    <option value="">All Complexity Levels</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button id="ragTab" class="nav-tab active">RAG Patterns</button>
+            <button id="agentTab" class="nav-tab">AI Agent Patterns</button>
+        </nav>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="compareBtn" class="btn btn--secondary btn--sm">Compare Selected</button>
+            <button id="recommendBtn" class="btn btn--secondary btn--sm">Get Recommendations</button>
+            <button id="clearBtn" class="btn btn--outline btn--sm">Clear Selection</button>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="ragSection" class="content-section active">
+            <div class="patterns-grid" id="ragGrid"></div>
+        </div>
+
+        <div id="agentSection" class="content-section">
+            <div class="patterns-grid" id="agentGrid"></div>
+        </div>
+
+        <!-- Comparison Modal -->
+        <div id="comparisonModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Pattern Comparison</h2>
+                    <button class="close-btn" id="closeComparison">&times;</button>
+                </div>
+                <div class="modal-body" id="comparisonContent"></div>
+            </div>
+        </div>
+
+        <!-- Pattern Detail Modal -->
+        <div id="detailModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="detailTitle"></h2>
+                    <button class="close-btn" id="closeDetail">&times;</button>
+                </div>
+                <div class="modal-body" id="detailContent"></div>
+            </div>
+        </div>
+
+        <!-- Recommendation Modal -->
+        <div id="recommendModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Pattern Recommendations</h2>
+                    <button class="close-btn" id="closeRecommend">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>What type of application are you building?</p>
+                    <div class="recommendation-options">
+                        <button class="btn btn--outline recommendation-option" data-usecase="qa">Simple Q&A System</button>
+                        <button class="btn btn--outline recommendation-option" data-usecase="research">Research Platform</button>
+                        <button class="btn btn--outline recommendation-option" data-usecase="automation">System Automation</button>
+                        <button class="btn btn--outline recommendation-option" data-usecase="multimedia">Multimedia Content</button>
+                        <button class="btn btn--outline recommendation-option" data-usecase="enterprise">Enterprise Solution</button>
+                    </div>
+                    <div id="recommendationResults" class="recommendation-results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
